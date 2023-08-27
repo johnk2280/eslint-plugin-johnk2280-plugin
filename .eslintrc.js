@@ -27,6 +27,17 @@ module.exports = {
         'semi': 'off',
         '@typescript-eslint/semi': ['error', 'always'],
         'object-curly-spacing': ['warn', 'always'],
-        'react/jsx-curly-spacing': ['warn', { 'when': 'always', children: true }]
+        'react/jsx-curly-spacing': ['warn', { 'when': 'always', children: true }],
+        '@typescript-eslint/member-delimiter-style': ['error', {
+            'multiline': {
+                'delimiter': 'semi',
+                'requireLast': true
+            },
+            'singleline': {
+                'delimiter': 'semi',
+                'requireLast': false
+            },
+            'multilineDetection': 'brackets'
+        }],
     }
 };
