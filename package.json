@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-johnk2280-plugin",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "plugin for production project",
   "keywords": [
     "eslint",
