@@ -20,8 +20,21 @@ ruleTester.run('path-checker', rule, {
     invalid: [
         {
             filename: '/home/johnk/Рабочий стол/repositories/production-TS-ReactJS-project/src/entities/Article',
-            code: 'import { addCommentFormActions, addCommentFormReducer } from "entities/Article/model/slice/addCommentFormSlice";',
+            code: 'import { addCommentFormActions, addCommentFormReducer } from ' +
+                '"entities/Article/model/slice/addCommentFormSlice";',
             errors: [{ message: 'В рамках одного слайса импорты должны быть относительными' }],
         },
+        {
+            filename: '/home/johnk/Рабочий стол/repositories/production-TS-ReactJS-project/src/entities/Article',
+            code: 'import { addCommentFormActions, addCommentFormReducer } from ' +
+                '"@/entities/Article/model/slice/addCommentFormSlice";',
+            options: [
+                {
+                    alias: '@'
+                }
+            ],
+            errors: [{ message: 'В рамках одного слайса импорты должны быть относительными' }],
+        },
+
     ],
 });
